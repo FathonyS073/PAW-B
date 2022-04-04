@@ -11,7 +11,7 @@
       //Pengujian apakah data akan diedit atau disimpan baru
         if($_GET['hal'] == "edit") {
           // data yang akan di edit
-          $edit = mysqli_query($koneksi, "UPDATE fath_073 set
+          $edit = mysqli_query($koneksi, "UPDATE tbl_073 set
                                           Nama    = '$_POST[tnama]',
                                           NIA     = '$_POST[tnia]',
                                           Alamat  = '$_POST[talamat]',
@@ -31,7 +31,7 @@
                       </script>"; 
           }
         }else {
-          $simpan = mysqli_query($koneksi,    "INSERT INTO fath_073 (Nama, Nia, Alamat, KC)
+          $simpan = mysqli_query($koneksi,    "INSERT INTO tbl_073 (Nama, Nia, Alamat, KC)
                                               VALUES  ('$_POST[tnama]',
                                                       '$_POST[tnia]', 
                                                       '$_POST[talamat]',
@@ -55,7 +55,7 @@
     if(isset($_GET['hal'])) {
       // tampilkan data yang diedit
       if($_GET['hal'] == "edit") {
-        $tampil = mysqli_query($koneksi, "SELECT * FROM fath_073 WHERE Id_Mhs = '$_GET[id]'");
+        $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_073 WHERE Id_Mhs = '$_GET[id]'");
         $data = mysqli_fetch_array($tampil);
         if($data) {
           // ifdata ditemukan maka ditampung kedalam data
@@ -66,7 +66,7 @@
           // dari tabel yang Nama, NIA, Alamat, KC
         }
       } else if($_GET['hal'] == "hapus") {
-          $hapus = mysqli_query($koneksi, "DELETE FROM fath_073 Where Id_Mhs='$_GET[id]'");
+          $hapus = mysqli_query($koneksi, "DELETE FROM tbl_073 Where Id_Mhs='$_GET[id]'");
           if($hapus){
             echo    "<script>
                           alert('Hapus data Sukses!');
@@ -93,7 +93,7 @@
     <div class="jumbotron jumbotron-fluid bg-info text-white">
         <div class="container">
           <h1 class="display-4" style="font-weight:bold;">Hallo !!!, Selamat Datang</h1>
-          <p class="lead">Halaman ini adalah halaman untuk admin</p>
+          <p class="lead">Halaman ini adalah halaman untuk admin untuk menambahkan data anggota UKM Triple-C</p>
         </div>
     </div>
     <!-- Ini awal card -->
@@ -147,7 +147,7 @@
                 </tr>
               <?php 
                     $no = 1;
-                    $tampil = mysqli_query($koneksi, "SELECT * from fath_073 order by Id_Mhs desc");
+                    $tampil = mysqli_query($koneksi, "SELECT * from tbl_073 order by Id_Mhs desc");
                     while($data = mysqli_fetch_array($tampil)) :
               ?>
               </thead>
