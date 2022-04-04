@@ -93,7 +93,7 @@
     <div class="jumbotron jumbotron-fluid bg-info text-white">
         <div class="container">
           <h1 class="display-4" style="font-weight:bold;">Hallo !!!, Selamat Datang</h1>
-          <p class="lead">Halaman ini adalah halaman untuk admin</p>
+          <p class="lead">Halaman ini adalah halaman untuk admin untuk menambahkan data anggota UKM Triple-C</p>
         </div>
     </div>
     <!-- Ini awal card -->
